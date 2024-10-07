@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Forcast</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css"/>
+    <link rel="icon" type="image" href="https://cdn-icons-png.flaticon.com/512/704/704845.png"/>
+  </head>
+
+  <body data-new-gr-c-s-check-loaded="14.1083.0" data-gr-ext-installed="">
+    <div id="root">
+      <div class="app">
+        <form action="" method="get">
+            <div class="search">
+            <input placeholder="Enter Location" name="city" type="text" value="" />
+            </div>
+        </form>
+        {% if data %}
+        <div class="container">
+          <div class="top">
+            <div class="location"><p>{{data.city}}</p></div>
+            <div class="temp"><h1>{{data.celsius_temperature}}°C</h1></div>
+            <div class="description"><p>{{data.description}}</p></div>
+          </div>
+          <div class="bottom">
+            <div class="feels">
+              <p class="bold">{{data.celsius_temperature}}°C</p>
+              <p>Feels Like</p>
+            </div>
+            <div class="humidity">
+              <p class="bold">{{data.humidity}}</p>
+              <p>Humidity</p>
+            </div>
+            <div class="wind">
+              <p class="bold">{{data.pressure}}</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+#netlify
