@@ -23,4 +23,4 @@ def home(request):
             data = payload
 
     context = {'data': data}
-    return render(request, 'home.html', context)
+    return render(request, 'index.html', context)
